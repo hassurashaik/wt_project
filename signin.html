@@ -1,0 +1,75 @@
+
+<html>
+	<head>
+		<link rel="stylesheet" href="style3.css">
+	</head>
+	<body style="background-color:grey">
+		
+		<div class="signin">
+			<form class='form'>
+				<div class='form-group'>
+					<div>
+						<span class='name_prefix'>#</span>
+						<span ><input type="text" placeholder="Username" class="name" name="name"></span>
+					</div>
+					<br><br>
+					<div>
+						<span class='name_prefix'>@</span>
+						<input type="text" placeholder="abc@gmail.com" class='mail' name="mail">
+					</div>
+					<br><br>
+
+						<button onclick="store(event)" class='submit' name='submit'>Submit</button>
+					<br><br>
+					<div class='msg'></div>
+				</div>			
+			</form>
+		</div>
+		<script>
+			
+			let signin_details=[];
+			function store(event)
+			{
+				
+				event.preventDefault();
+				let found=0;
+				let name=document.querySelector('.name').value;
+				let	mail=document.querySelector('.mail').value;
+				
+				let check_details=JSON.parse(localStorage.getItem('signin_details'));
+				if(check_details!=null)
+				{
+					for(let i=0;i<check_details.length;i=i+1)
+					{
+						if(check_details[i].name==name)
+						{
+							console.log(check_details[i].name);
+							found=1;
+						}
+					}
+				}
+				if(found!=1)
+				{
+					let ind_details=
+					{
+						'name':name,
+						'mail':mail
+					};
+					signin_details.push(ind_details);
+					localStorage.setItem('signin_details',JSON.stringify(signin_details));
+					window.location.href="index2.html";
+				}
+				else
+				{
+					let str=`<div class='err_signin'>User already exists.Try again</div>`;
+					let htmlcode=str;
+					document.querySelector('.msg').innerHTML=htmlcode;
+				}
+				
+				
+			}
+			
+		</script>
+		
+	</body>
+</html>
