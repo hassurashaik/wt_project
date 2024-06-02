@@ -1,0 +1,97 @@
+body
+{
+	background:url('todo.jpg');
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+.basic_button_1
+{
+	text-decoration:None;
+	background-color:grey;
+	color:white;
+	font-size:25px;
+	border-radius:9px;
+	padding:12px;
+	border:None;
+	font-weight:bold;
+	
+}
+.basic_button_2
+{
+	text-decoration:None;
+	background-color:grey;
+	color:white;
+	font-size:25px;
+	border-radius:9px;
+	padding:12px;
+	border:None;
+	font-weight:bold;
+	margin-left:50px;
+}
+.signin
+{
+	margin-top:270px;
+}
+.name,.mail
+{
+	padding:10px;
+	font-size:20px;
+	font-weight:bold;
+	margin-left:-4px;
+	border:2px solid grey;
+	border-radius:0px 8px 8px 0px;
+	background-color:rgba(237, 234, 235, 0.8);
+}
+.name_prefix
+{
+	color:grey;
+	font-size:25px;
+	font-weight:bold;
+	background-color:white;
+	padding-top:6px;
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right:10px;
+	margin-right:0px;
+	margin-left:70px;
+	border: 2px solid grey;
+	border-right:0px;
+	border-radius:8px 0px 0px 8px;
+	background-color:rgba(237, 234, 235, 0.8);
+}
+
+.signin
+{
+	margin-top:300px;
+	margin-left:450px;
+}
+.submit
+{
+	border:2px solid grey;
+	border-radius:8px;
+	font-size:20px;
+	color:grey;
+	font-weight:bold;
+	background-color:rgba(237, 234, 235, 0.8);
+	padding:10px;
+	margin-left:170px;
+}
+.login
+{
+	margin-top:350px;
+	margin-left:450px;
+}
+.err_login
+{
+	font-size:18px;
+	color:red;
+	margin-left:120px;
+	margin-top:20px;
+}
+.err_signin
+{
+	font-size:18px;
+	color:red;
+	margin-left:120px;
+}
