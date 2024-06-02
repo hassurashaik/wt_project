@@ -1,0 +1,59 @@
+
+<html>
+	<head>
+		<link rel="stylesheet" href="style3.css">
+	</head>
+	<body style="background-color:grey">
+		
+		<div class="login">
+			<form class='form'>
+				<div>
+					<div>
+						<span class='name_prefix'>#</span>
+						<span ><input type="text" placeholder="Username" class="name" name="name"></span>
+					</div>
+					<br><br><br>
+						<button onclick="check(event)" class='submit' name="submit">Submit</button>
+						<div class='msg'></div>
+				</div>			
+			</form>
+		</div>
+		<script>
+			function check(event)
+			{
+				
+				event.preventDefault();
+				let found=0;
+				let name=document.querySelector('.name').value;
+				
+				let check_details=JSON.parse(localStorage.getItem('signin_details'));
+				if(check_details!=null)
+				{
+					console.log(check_details.length);
+					for(let i=0;i<check_details.length;i=i+1)
+					{
+						if(check_details[i].name==name)
+						{
+							console.log(check_details[i].name);
+							found=1;
+						}
+					}
+				}
+				if(found==1)
+				{
+					window.location.href="index2.html";
+				}
+				else
+				{
+					console.log(found);
+					let str=`<div class='err_login'>Invalid login details.Try again</div>`;
+					let htmlcode=str;
+					document.querySelector('.msg').innerHTML=htmlcode;
+				}
+				
+				
+			}
+		</script>
+		
+	</body>
+</html>
