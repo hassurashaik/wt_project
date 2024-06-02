@@ -1,6 +1,6 @@
 const fs=require('fs');
 const http=require('http');
-const file=fs.readFileSync('final.html');
+const file=fs.readFileSync('index.html');
 const server=http.createServer((req,res)=>{
     res.writeHead(200,{'content-type':'text/html'});
     res.end(file);
